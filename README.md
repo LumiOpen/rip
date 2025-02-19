@@ -54,3 +54,13 @@ python rip.py filter --input_path scored.jsonl --accepted_path accepted.jsonl --
 
 The accepted rows will end up in the `accepted.jsonl` and the rejected rows
 will be in the `rejected.jsonl`
+
+You can easily reformat the final jsonl output into a more typical multi turn
+chat format in jsonl like this:
+
+```bash
+cat accepted.jsonl | jq -c '{"messages": [{"role": "user", "content": .prompt}, {"role": "assistant", "content": .best_response.response }]}' > accepted_reformatted.jsonl
+```
+
+
+
