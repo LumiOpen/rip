@@ -61,6 +61,3 @@ chat format in jsonl like this:
 ```bash
 cat accepted.jsonl | jq -c '{"messages": [{"role": "user", "content": .prompt}, {"role": "assistant", "content": .best_response.response }]}' > accepted_reformatted.jsonl
 ```
-
-
-

@@ -67,7 +67,7 @@ srun -l bash -c '
 
     module use /appl/local/csc/modulefiles
     module load pytorch
-    python rip_dispatcher.py score \
+    python rip.py score \
         --dispatcher_server ${DISPATCHER_SERVER}:${DISPATCHER_PORT} \
         --reward_model_path '"$MODEL"'
 '

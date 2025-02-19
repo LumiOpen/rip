@@ -71,7 +71,7 @@ srun -l bash -c '
 
     module use /appl/local/csc/modulefiles
     module load pytorch
-    python rip_dispatcher.py generate \
+    python rip.py generate \
         --dispatcher_server ${DISPATCHER_SERVER}:${DISPATCHER_PORT} \
         --max_model_len 16384 \
         --tensor_parallel_size '"$GPUS_PER_TASK"' \
